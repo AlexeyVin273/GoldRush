@@ -33,42 +33,4 @@
       }
     }
   }
-
-  &__error {
-    position: absolute;
-    right: 0;
-    bottom: -5px;
-
-    color: $color-torch-red;
-
-    opacity: 0;
-
-    transition: opacity $trans-default;
-  }
-
-  &.is-invalid {
-    input {
-      border: 2px solid $color-torch-red;
-
-      &:focus,
-      &:hover {
-        border: 2px solid rgba($color-torch-red, 0.5);
-      }
-    }
-
-    .custom-input__error {
-      opacity: 1;
-    }
-  }
-
-  /*&.is-valid {
-    input {
-      border: 2px solid $color-malachite;
-
-      &:focus,
-      &:hover {
-        border: 2px solid rgba($color-malachite, 0.5);
-      }
-    }
-  }*/
 }
