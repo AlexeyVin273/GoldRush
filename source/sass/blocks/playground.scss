@@ -1,0 +1,195 @@
+.playground {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  &__header {
+    flex-shrink: 0;
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 56px;
+    padding: 6px 0;
+    border-bottom: 2px solid $color-blue-violet;
+    background: linear-gradient(180deg, $color-electric-indigo 0%, $color-electric-purple 40.42%, $color-indigo 100%);
+    box-shadow:
+      0 4px 4px 0 rgba($color-default-black, 0.25),
+      0 -11px 19px 0 rgba($color-persian-indigo-2, 0.631) inset;
+
+    .round-btn {
+      position: absolute;
+      left: 34px;
+      top: 50%;
+
+      transform: translate3d(0, -50%, 0);
+
+      img {
+        transform: translate3d(0, 2px, 0);
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0;
+
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 4px rgba($color-default-black, 0.25);
+
+    border-radius: 18.5px;
+    border: 1px solid $color-selective-yellow;
+    background-color: $color-persian-indigo;
+    box-shadow: 0 4px 3px 0 rgba($color-blackcurrant, 0.91) inset;
+  }
+
+  &__stars {
+    position: relative;
+    padding: 6px 42px;
+    min-width: 241px;
+
+    img {
+      position: absolute;
+      left: -6px;
+      top: -9px;
+      width: 47px;
+      height: 49px;
+
+      object-fit: cover;
+      user-select: none;
+    }
+  }
+
+  &__stars-number {
+    color: $color-transparent;
+    background: linear-gradient(180deg, $color-navy-blue 0%, $color-electric-purple 100%);
+    background-clip: text;
+  }
+
+  &__coins {
+    position: relative;
+    padding: 6px 40px;
+    min-width: 212px;
+
+    img {
+      position: absolute;
+      left: 10px;
+      top: 6px;
+      width: 39px;
+      height: 27px;
+
+      object-fit: cover;
+      user-select: none;
+    }
+  }
+
+  &__coins-number {
+    color: $color-transparent;
+    background: linear-gradient(180deg, $color-chartreuse-yellow 0%, $color-selective-yellow 100%);
+    background-clip: text;
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 56px;
+    padding: 6px 38px;
+    border-bottom: 2px solid $color-blue-violet;
+    background: linear-gradient(180deg, $color-electric-indigo 0%, $color-electric-purple 40.42%, $color-indigo 100%);
+    box-shadow:
+      0 4px 4px 0 rgba($color-default-black, 0.25),
+      0 -11px 19px 0 rgba($color-persian-indigo-2, 0.631) inset;
+  }
+
+  &__winning {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 14px;
+    min-width: 189px;
+
+    border: 0;
+    border-radius: 10px;
+    background-color: $color-blackcurrant-2;
+  }
+
+  &__winning-text {
+    position: relative;
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span:nth-child(1) {
+      position: relative;
+
+      color: $color-transparent;
+
+      background-image: linear-gradient(180deg, $color-default-white 0%, $color-deep-sky-blue 100%);
+      background-clip: text;
+
+      z-index: 2;
+    }
+
+    span:nth-child(2) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-shadow:
+        -1px 0px $color-fun-blue,
+        1px 0px $color-fun-blue,
+        0 -1px $color-fun-blue,
+        0px 1px $color-fun-blue,
+        -1px -1px $color-fun-blue,
+        1px 1px $color-fun-blue,
+        1px -1px $color-fun-blue,
+        -1px 1px $color-fun-blue;
+
+      z-index: 1;
+    }
+
+  }
+
+  &__winning-summ {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 4px 10px rgba($color-yellow, 0.62);
+    color: $color-transparent;
+
+    background-image: linear-gradient(180deg, $color-chartreuse-yellow 0%, $color-selective-yellow 100%);
+    background-clip: text;
+  }
+
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+
+    .btn {
+      margin: 5px;
+    }
+  }
+}

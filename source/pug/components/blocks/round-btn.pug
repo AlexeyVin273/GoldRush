@@ -1,0 +1,6 @@
+mixin round-btn(options)
+  - const {icon = false, iconWidth, iconHeight} = options;
+
+  button.round-btn&attributes(attributes)
+    if (icon)
+      +img("svg", icon, "svg", iconWidth, iconHeight, "")
