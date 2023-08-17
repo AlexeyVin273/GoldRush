@@ -1,0 +1,6 @@
+mixin bets()
+  .bets&attributes(attributes)
+    +round-btn({icon: "icon-minus", iconWidth: "11", iconHeight: "7"}).bets__minus
+    .bets__input
+      span.bets__value 50000
+    +round-btn({icon: "icon-plus", iconWidth: "15", iconHeight: "14"}).bets__plus

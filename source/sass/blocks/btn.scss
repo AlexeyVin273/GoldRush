@@ -1,27 +1,105 @@
 .btn {
   display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
+  padding: 11px 27px;
 
-  color: $color-default-white;
+  color: $color-transparent;
 
-  background-color: $color-chartreuse-yellow;
-  border: none;
+  background-color: $color-transparent;
+  border: 1px solid $color-deep-sky-blue-2;
+  border-radius: 11px;
+  background: linear-gradient(180deg, $color-bright-green 0%, $color-electric-purple-2 0.01%, $color-dark-cerulean 100%);
+  box-shadow:
+    0px 4px 4px 0px rgba($color-harlequin, 0.271),
+    0px 4px 4px 0px rgba($color-lemon-chiffon, 0.651)
+    0px -6px 4px 0px rgba($color-deep-sky-blue-2, 0.26) inset;
+
   cursor: pointer;
+  user-select: none;
 
-  transition: opacity $trans-default;
+  &__text {
+    position: relative;
 
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span:nth-child(1) {
+      position: relative;
+
+      color: $color-transparent;
+
+      background-image: linear-gradient(180deg, $color-default-white 0%, $color-deep-sky-blue 100%);
+      background-clip: text;
+
+      z-index: 2;
+    }
+
+    span:nth-child(2) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-shadow:
+        -1px 0px $color-fun-blue,
+        1px 0px $color-fun-blue,
+        0 -1px $color-fun-blue,
+        0px 1px $color-fun-blue,
+        -1px -1px $color-fun-blue,
+        1px 1px $color-fun-blue,
+        1px -1px $color-fun-blue,
+        -1px 1px $color-fun-blue;
+
+      z-index: 1;
+    }
+  }
+
+  &--green {
+    border: 1px solid $color-selective-yellow;
+    background: linear-gradient(180deg, $color-bright-green 0%, $color-green 100%);
+    box-shadow:
+      0 4px 4px 0 rgba($color-harlequin, 0.27),
+      0 4px 4px 0 rgba($color-lemon-chiffon, 0.65) inset,
+      0 -6px 4px 0 rgba($color-free-speech-green, 0.26) inset;
+
+    .btn__text {
+      span:nth-child(1) {
+        position: relative;
+
+        color: $color-transparent;
+
+        background-image: linear-gradient(180deg, $color-default-white 0%, $color-bright-green 100%);
+        background-clip: text;
+
+        z-index: 2;
+      }
+
+      span:nth-child(2) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-shadow:
+          -1px 0px $color-kelly-green,
+          1px 0px $color-kelly-green,
+          0 -1px $color-kelly-green,
+          0px 1px $color-kelly-green,
+          -1px -1px $color-kelly-green,
+          1px 1px $color-kelly-green,
+          1px -1px $color-kelly-green,
+          -1px 1px $color-kelly-green;
+
+        z-index: 1;
+      }
+    }
+  }
+
+  @include hover-focus {
+
+  }
 
   &:disabled {
     opacity: 0.5;
 
     pointer-events: none;
-  }
-
-  @media (hover: hover), screen and (min-width: 0\0) {
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
   }
 }

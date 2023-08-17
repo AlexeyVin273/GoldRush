@@ -1,0 +1,25 @@
+mixin playground()
+  section.playground
+    .container
+      .playground__inner
+        h1.visually-hidden Royal Coins
+        .playground__header
+          +round-btn({icon: "icon-arrow-back", iconWidth: "11", iconHeight: "19"})
+          .playground__stats.playground__stars
+            +img("svg", "icon-star", "svg", "48", "50", "")
+            span.playground__stars-number 0/9000
+          .playground__stats.playground__coins
+            +img("svg", "icon-coins", "svg", "39", "27", "")
+            span.playground__coins-number 1000000
+        .playground__main
+          //- +slot()
+        .playground__footer
+          +bets()
+          .playground__winning
+            span.playground__winning-text
+              span win
+              span win
+            span.playground__winning-summ 0,000
+          .playground__controls
+            +btn({text: "auto"})
+            +btn({text: "spin"}).btn--green

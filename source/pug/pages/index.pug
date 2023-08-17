@@ -1,18 +1,16 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Gold Rush" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Gold Rush - Royal Coins"
   - const wrapperMods = ""
   - const hasHeader = false
   - const headerMods = ""
   - const hasFooter = false
   - const footerMods = ""
-  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const currentUrl = "index.html"
 
 block main
   main
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
-    +intro()
+    +playground()
 
 block modals

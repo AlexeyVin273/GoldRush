@@ -1,0 +1,44 @@
+.round-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background-image: radial-gradient(90.60% 83.70% at 50.00% 16.30%, $color-hot-magenta 6.04%, $color-electric-purple 100%);
+  box-shadow:
+    0 0 0px 1px rgba($color-default-white, 0.32),
+    0 7px 5px 0 rgba($color-electric-indigo-2, 0.32),
+    0 4px 1px 0 rgba($color-blue-chalk, 0.49) inset;
+
+  transition: box-shadow $trans-default;
+
+  cursor: pointer;
+  user-select: none;
+
+  img {
+    object-fit: cover;
+    user-select: none;
+  }
+
+  @include hover-focus {
+    box-shadow:
+      0 0 0px 1px rgba($color-default-white, 0.42),
+      0 7px 5px 0 rgba($color-electric-indigo-2, 0.32),
+      0 2px 1px 0 rgba($color-blue-chalk, 0.29) inset;
+  }
+
+  @include active {
+    transition: none;
+    box-shadow:
+      0 0 0px 1px rgba($color-default-black, 0.17),
+      0 7px 5px 0 rgba($color-electric-indigo-2, 0.32),
+      0 2px 1px 0 rgba($color-blue-chalk, 0.29) inset,
+      0 0 1px 1px rgba($color-default-white, 0.29) inset;
+  }
+}
