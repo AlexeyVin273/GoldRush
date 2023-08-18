@@ -27,9 +27,11 @@ $color-persian-indigo:              #370063;
 $color-persian-indigo-2:            #380070;
 $color-blackcurrant:                #200041;
 $color-blackcurrant-2:              #320950;
+$color-blackcurrant-3:              #15091f;
 $color-lemon-chiffon:               #fff7cf;
 $color-yellow:                      #faff00;
 $color-chartreuse-yellow:           #ebff00;
+$color-golden-yellow:               #ffe600;
 $color-selective-yellow:            #ffb800;
 $color-bright-green:                #70ff00;
 $color-harlequin:                   #24ff00;
@@ -58,12 +60,15 @@ $ff-impact:                         "Impact", "Arial", sans-serif;
 // ---------------------------------
 
 $tf-default:                        ease;
+$tf-out:                            ease-out;
 $trans-default:                     0.3s $tf-default;
+$trans-out:                         0.3s $tf-out;
 
 // если требуется изинг отличный от $tf-default, то переменную называем не цифрой
 $trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
 
 $trans-600:                         0.6s $tf-default;
+$trans-out-400:                     0.4s $tf-out;
 
 // Viewports
 // ---------------------------------

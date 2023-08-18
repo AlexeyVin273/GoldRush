@@ -41,4 +41,10 @@
       0 2px 1px 0 rgba($color-blue-chalk, 0.29) inset,
       0 0 1px 1px rgba($color-default-white, 0.29) inset;
   }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
 }

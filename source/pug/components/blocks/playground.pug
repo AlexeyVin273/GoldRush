@@ -3,6 +3,8 @@ mixin playground()
     .container
       .playground__inner
         h1.visually-hidden Royal Coins
+        .playground__bg
+          +picture("content", "main-bg", "jpg", "800", "360", "")
         .playground__header
           +round-btn({icon: "icon-arrow-back", iconWidth: "11", iconHeight: "19"})
           .playground__stats.playground__stars
@@ -12,9 +14,9 @@ mixin playground()
             +img("svg", "icon-coins", "svg", "39", "27", "")
             span.playground__coins-number 1000000
         .playground__main
-          //- +slot()
+          +slot()
         .playground__footer
-          +bets()
+          +bets().playground__bets
           .playground__winning
             span.playground__winning-text
               span win
