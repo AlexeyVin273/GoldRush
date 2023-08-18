@@ -1,10 +1,35 @@
 .playground {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 
   &__inner {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
-    min-height: calc(var(--vh, 1vh) * 100);
+    height: 360px;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
   }
 
   &__header {
@@ -12,10 +37,10 @@
     position: relative;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     min-height: 56px;
-    padding: 6px 0;
+    padding: 6px 128px 6px 34px;
     border-bottom: 2px solid $color-blue-violet;
     background: linear-gradient(180deg, $color-electric-indigo 0%, $color-electric-purple 40.42%, $color-indigo 100%);
     box-shadow:
@@ -23,11 +48,8 @@
       0 -11px 19px 0 rgba($color-persian-indigo-2, 0.631) inset;
 
     .round-btn {
-      position: absolute;
-      left: 34px;
-      top: 50%;
-
-      transform: translate3d(0, -50%, 0);
+      flex-shrink: 0;
+      margin: 0 20px 0 0;
 
       img {
         transform: translate3d(0, 2px, 0);
@@ -53,9 +75,10 @@
   }
 
   &__stars {
+    flex: 0 1 241px;
     position: relative;
-    padding: 6px 42px;
-    min-width: 241px;
+    padding: 6px 20px 6px 42px;
+    margin: 0 20px 0 0;
 
     img {
       position: absolute;
@@ -76,9 +99,9 @@
   }
 
   &__coins {
+    flex: 0 1 212px;
     position: relative;
-    padding: 6px 40px;
-    min-width: 212px;
+    padding: 6px 20px 6px 52px;
 
     img {
       position: absolute;
@@ -117,12 +140,17 @@
       0 -11px 19px 0 rgba($color-persian-indigo-2, 0.631) inset;
   }
 
+  &__bets {
+    margin: 0 20px 0 0;
+  }
+
   &__winning {
+    flex: 0 1 189px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 7px 14px;
-    min-width: 189px;
+    margin: 0 20px 0 0;
 
     border: 0;
     border-radius: 10px;
@@ -131,7 +159,7 @@
 
   &__winning-text {
     position: relative;
-    margin: 0;
+    margin: 0 20px 0 0;
 
     font-size: 20px;
     line-height: 1.2;
@@ -184,6 +212,7 @@
   }
 
   &__controls {
+    flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
     margin: -5px;

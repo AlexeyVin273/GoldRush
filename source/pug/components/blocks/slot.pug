@@ -49,8 +49,9 @@ mixin slot()
     ];
 
   .slot&attributes(attributes)
-    - for (let i = 0; i < 3; ++i)
-        .slot__column
-          each image in images
-            .slot__cell
-              +picture("content/slot", image.src, "png", image.width, image.height, "")
+    .slot__inner
+      - for (let i = 0; i < 3; ++i)
+          .slot__column
+            each image in images
+              .slot__cell
+                +picture("content/slot", image.src, "png", image.width, image.height, "")
