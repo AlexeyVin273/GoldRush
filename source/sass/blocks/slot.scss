@@ -1,5 +1,5 @@
 .slot {
-  width: 412px;
+  width: min-content;
   height: 240px;
   margin: 4px auto;
   padding: 8px 21px;
@@ -8,17 +8,106 @@
   border: 1px solid $color-golden-yellow;
   background: rgba($color-blackcurrant-3, 0.73);
 
-  overflow: hidden;
-
   &__inner {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px 0;
+    gap: 10px 17px;
+
+    height: 100%;
+    overflow: hidden;
+
+    @include vp-767 {
+      gap: 10px 7px;
+    }
   }
 
   &__column {
+    display: grid;
+    gap: 10px 0;
+    width: 100%;
+
+    &:nth-child(2) .slot__cell img {
+      margin: 0 auto;
+    }
+
+    &:nth-child(3) .slot__cell img {
+      margin: 0 0 0 auto;
+    }
   }
 
   &__cell {
+    width: 112px;
+    height: 68px;
+    text-align: left;
+
+    img {
+      margin: 0 auto 0 0;
+    }
+
+    &--size-small img {
+      width: 105px;
+      height: 65px;
+
+      @include vp-1024 {
+        width: 173px;
+        height: 107px;
+      }
+
+      @include vp-767 {
+        width: 84px;
+        height: 52px;
+      }
+    }
+
+    &--size-middle img {
+      width: 105px;
+      height: 68px;
+
+      @include vp-1024 {
+        width: 173px;
+        height: 112px;
+      }
+
+      @include vp-767 {
+        width: 84px;
+        height: 55px;
+      }
+    }
+
+    &--size-big img {
+      width: 112px;
+      height: 59px;
+
+      @include vp-1024 {
+        width: 184px;
+        height: 97px;
+      }
+
+      @include vp-767 {
+        width: 90px;
+        height: 47px;
+      }
+    }
+
+    @include vp-1024 {
+      width: 184px;
+      height: 112px;
+    }
+
+    @include vp-767 {
+      width: 90px;
+      height: 55px;
+    }
+  }
+
+  @include vp-1024 {
+    height: 372px;
+  }
+
+  @include vp-767 {
+    max-width: 300px;
+    height: 201px;
+    padding: 8px 7px;
   }
 }
