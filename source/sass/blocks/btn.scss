@@ -12,10 +12,8 @@
 
   box-shadow:
     0px 4px 4px 0px rgba($color-harlequin, 0.271),
-    0px 4px 4px 0px rgba($color-lemon-chiffon, 0.651)
+    0px 4px 4px 0px rgba($color-lemon-chiffon, 0.651) inset,
     0px -6px 4px 0px rgba($color-deep-sky-blue-2, 0.26) inset;
-
-  transition: box-shadow $trans-default;
 
   cursor: pointer;
   user-select: none;
@@ -56,23 +54,53 @@
 
       z-index: 1;
     }
+
+    @include vp-1024 {
+      font-size: 32px;
+    }
   }
 
   &::before {
     position: absolute;
-    left: -100%;
-    top: -100%;
-    width: 300%;
-    height: 300%;
+    left: -2%;
+    top: 0;
+    width: 104%;
+    height: 100%;
     border-radius: 11px;
 
-    background-image: linear-gradient(180deg, $color-electric-purple-2 30%, $color-dark-cerulean 70%);
+    background-image: linear-gradient(180deg, $color-electric-purple-2 0%, $color-dark-cerulean 100%);
+    box-shadow: 0 3px 5px 2px rgba($color-default-white, 0.5) inset;
 
-    transition: transform $trans-out;
+    transition: box-shadow $trans-out;
 
     z-index: 0;
 
     content: "";
+
+    @include vp-1024 {
+      border-radius: 14px;
+    }
+  }
+
+  @include hover-focus {
+    &::before {
+      box-shadow: none;
+    }
+  }
+
+  @include focus {
+    outline: none;
+  }
+
+  @include active {
+    box-shadow: 0 0 0 1px rgba($color-blackcurrant, 0.3);
+    transform: scale(0.98);
+    border-color: rgba($color-deep-sky-blue-2, 0.8);
+
+    @include vp-1024 {
+      box-shadow: 0 0 0 2px rgba($color-blackcurrant, 0.3);
+      transform: scale(0.94);
+    }
   }
 
   &--green {
@@ -115,18 +143,16 @@
     &::before {
       background-image: linear-gradient(180deg, $color-bright-green 0%, $color-green 100%);
     }
-  }
 
-  @include hover-focus {
-    &::before {
-      transform: rotate(180deg);
+    @include active {
+      border-color: rgba($color-selective-yellow, 0.8);
     }
-  }
 
-  @include active {
-    &::before {
-      transition: none;
-      transform: rotate(180deg) scaleY(2);
+    @include vp-1024 {
+      box-shadow:
+        0 6px 6px 0 rgba($color-harlequin, 0.27),
+        0 6px 6px 0 rgba($color-lemon-chiffon, 0.65) inset,
+        0 -9px 6px 0 rgba($color-free-speech-green, 0.26) inset;
     }
   }
 
@@ -134,5 +160,19 @@
     opacity: 0.5;
 
     pointer-events: none;
+  }
+
+  @include vp-1024 {
+    border-radius: 14px;
+    border-width: 2px;
+
+    box-shadow:
+      0px 6px 6px 0px rgba($color-harlequin, 0.271),
+      0px 6px 6px 0px rgba($color-lemon-chiffon, 0.651) inset,
+      0px -9px 6px 0px rgba($color-deep-sky-blue-2, 0.26) inset;
+  }
+
+  @include vp-767 {
+    padding: 7px 15px;
   }
 }
