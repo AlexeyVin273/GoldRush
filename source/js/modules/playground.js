@@ -6,9 +6,12 @@ const stats = {
   maxStars: 0,
   coins: 0,
   bets: 0,
-  win: 0,
   isSpinMade: false,
   isGameStarted: false,
+  startSpeed: 100,
+  maxSpeed: 30,
+  acceleration: 5,
+  winFrequency: 3,
 };
 
 export class Playground {
@@ -25,6 +28,8 @@ export class Playground {
     this.coinsNumber = this.container.querySelector('.playground__coins-number');
     this.autoButton = this.container.querySelector('.playground__auto-btn');
     this.spinButton = this.container.querySelector('.playground__spin-btn');
+    this.winWord = this.container.querySelector('.playground__winning-text');
+    this.wonSumm = this.container.querySelector('.playground__winning-summ');
 
     const starsNumber = this.starsNumber.textContent;
     stats.stars = Number(starsNumber.substring(0, starsNumber.indexOf('/')));
@@ -39,9 +44,13 @@ export class Playground {
 
     this.onAutoButtonClick = this.onAutoButtonClick.bind(this);
     this.onSpinButtonClick = this.onSpinButtonClick.bind(this);
+    this.onSlotsFinished = this.onSlotsFinished.bind(this);
 
     this.autoButton.addEventListener('click', this.onAutoButtonClick);
     this.spinButton.addEventListener('click', this.onSpinButtonClick);
+    this.container.addEventListener('onslotsfinished', this.onSlotsFinished);
+
+    this.disableButton(this.autoButton);
   }
 
   writeOffCoins(coins) {
@@ -56,15 +65,16 @@ export class Playground {
   }
 
   onAutoButtonClick() {
-    if (!stats.isSpinMade) {
-      alert('Ставка не сделана');
+    if (stats.isGameStarted) {
+      this.slots.stop();
       return;
     }
 
     stats.isGameStarted = true;
     this.bets.disable();
+    this.disableButton(this.spinButton);
 
-    this.slots.start();
+    this.slots.start(stats);
   }
 
   onSpinButtonClick() {
@@ -83,5 +93,46 @@ export class Playground {
     stats.bets = newBets;
 
     stats.isSpinMade = true;
+    this.enableButton(this.autoButton);
+    this.hideWinnings();
+  }
+
+  onSlotsFinished(evt) {
+    this.enableButton(this.spinButton);
+    this.disableButton(this.autoButton);
+    this.bets.enable();
+
+    if (evt.detail.isWinner) {
+      const winnings = stats.bets * 5;
+      this.showWinnings(winnings);
+      this.accrueCoins(winnings);
+      setTimeout(() => {
+        this.hideWinnings();
+      }, 10000);
+    }
+
+    stats.bets = 0;
+    stats.isGameStarted = false;
+    stats.isSpinMade = false;
+  }
+
+  disableButton(button) {
+    button.setAttribute('disabled', '');
+  }
+
+  enableButton(button) {
+    button.removeAttribute('disabled');
+  }
+
+  hideWinnings() {
+    this.winWord.classList.remove('is-shown');
+    this.wonSumm.classList.remove('is-shown');
+    this.wonSumm.textContent = '0,000';
+  }
+
+  showWinnings(coins) {
+    this.winWord.classList.add('is-shown');
+    this.wonSumm.classList.add('is-shown');
+    this.wonSumm.textContent = coins;
   }
 }
