@@ -8,10 +8,10 @@ mixin playground()
         .playground__header
           +round-btn({icon: "icon-arrow-back", iconWidth: "11", iconHeight: "19"})
           .playground__stats.playground__stars
-            img(src=`/img/svg/icon-star.svg`, width="48", height="50", alt="")
+            img(src=`img/svg/icon-star.svg`, width="48", height="50", alt="")
             span.playground__stars-number 0/9000
           .playground__stats.playground__coins
-            img(src=`/img/svg/icon-coins.svg`, width="39", height="27", alt="")
+            img(src=`img/svg/icon-coins.svg`, width="39", height="27", alt="")
             span.playground__coins-number 1000000
         .playground__main
           +slot()
