@@ -1,0 +1,63 @@
+mixin slot()
+  -
+    const images = [
+      {
+        src: "slot-01",
+        width: "105",
+        height: "65",
+        size: "small",
+      },
+      {
+        src: "slot-02",
+        width: "105",
+        height: "65",
+        size: "small",
+      },
+      {
+        src: "slot-03",
+        width: "105",
+        height: "65",
+        size: "small",
+      },
+      {
+        src: "slot-04",
+        width: "112",
+        height: "59",
+        size: "big",
+      },
+      {
+        src: "slot-05",
+        width: "112",
+        height: "59",
+        size: "big",
+      },
+      {
+        src: "slot-06",
+        width: "112",
+        height: "59",
+        size: "big",
+      },
+      {
+        src: "slot-07",
+        width: "105",
+        height: "68",
+        size: "middle",
+      },
+      {
+        src: "slot-08",
+        width: "105",
+        height: "68",
+        size: "middle",
+      },
+      {
+        src: "slot-09",
+        width: "105",
+        height: "68",
+        size: "middle",
+      },
+    ];
+
+  .slot&attributes(attributes)
+    .slot__inner
+      - for (let i = 0; i < 3; ++i)
+          .slot__column

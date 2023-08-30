@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @include vp-1024 {
+    max-width: 1200px;
+  }
+}

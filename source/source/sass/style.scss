@@ -1,0 +1,25 @@
+// Vendor
+// ---------------------------------
+
+@import "vendor/normalize";
+
+// Global
+// ---------------------------------
+
+@import "variables";
+@import "mixins";
+@import "functions";
+@import "keyframes";
+@import "global/fonts";
+@import "global/reboot";
+@import "global/utils";
+@import "global/container";
+
+// Blocks
+// ---------------------------------
+
+@import "blocks/btn";
+@import "blocks/playground";
+@import "blocks/round-btn";
+@import "blocks/bets";
+@import "blocks/slot";

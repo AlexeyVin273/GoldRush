@@ -1,0 +1,88 @@
+// Colors
+// ---------------------------------
+
+// Default
+
+$color-default-black:               #000000;
+$color-default-white:               #ffffff;
+$color-transparent:                 rgba(255, 255, 255, 0);
+
+// Project palette
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
+
+$color-deep-sky-blue:               #1dc9ff;
+$color-deep-sky-blue-2:             #00a3ff;
+$color-navy-blue:                   #0066ff;
+$color-fun-blue:                    #244581;
+$color-dark-cerulean:               #005484;
+$color-hot-magenta:                 #ff00e5;
+$color-blue-chalk:                  #f1caff;
+$color-blue-violet:                 #913bff;
+$color-electric-indigo:             #8000ff;
+$color-electric-indigo-2:           #5c00ff;
+$color-electric-purple:             #9e00ff;
+$color-electric-purple-2:           #bd00ff;
+$color-indigo:                      #61009c;
+$color-persian-indigo:              #370063;
+$color-persian-indigo-2:            #380070;
+$color-blackcurrant:                #200041;
+$color-blackcurrant-2:              #320950;
+$color-blackcurrant-3:              #15091f;
+$color-lemon-chiffon:               #fff7cf;
+$color-yellow:                      #faff00;
+$color-chartreuse-yellow:           #ebff00;
+$color-golden-yellow:               #ffe600;
+$color-selective-yellow:            #ffb800;
+$color-bright-green:                #70ff00;
+$color-harlequin:                   #24ff00;
+$color-free-speech-green:           #00ff38;
+$color-bright-green:                #73ff1d;
+$color-kelly-green:                 #27c202;
+$color-green:                       #008405;
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+// ---------------------------------
+
+// переменная используемая в html для подключения скейлинга
+$fz-default:                        16px;
+
+// у некоторых шрифтов в ios возникают проблемы с символом рубля
+// https://www.artlebedev.ru/kovodstvo/sections/159/#13
+$ff-rouble:                         "Rouble", "Arial", sans-serif;
+
+$ff-impact:                         "Impact", "Arial", sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default:                        ease;
+$tf-out:                            ease-out;
+$trans-default:                     0.3s $tf-default;
+$trans-out:                         0.3s $tf-out;
+
+// если требуется изинг отличный от $tf-default, то переменную называем не цифрой
+$trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+$trans-600:                         0.6s $tf-default;
+$trans-out-400:                     0.4s $tf-out;
+
+// Viewports
+// ---------------------------------
+
+$vp-320:                            320px;
+$vp-375:                            375px;
+$vp-768:                            768px;
+$vp-1024:                           1024px;
+$vp-1280:                           1280px;
+$vp-1440:                           1440px;
+$vp-1920:                           1920px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;
