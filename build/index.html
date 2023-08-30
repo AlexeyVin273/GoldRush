@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Gold Rush - Royal Coins</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Gold Rush">
+    <link rel="preload" href="fonts/impact.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <section class="playground">
+          <div class="container">
+            <div class="playground__inner">
+              <h1 class="visually-hidden">Royal Coins</h1>
+              <div class="playground__bg">
+                <picture>
+                  <source type="image/webp" srcset="img/content/main-bg.webp, img/content/main-bg@2x.webp 2x"><img src="img/content/main-bg.jpg" srcset="img/content/main-bg@2x.jpg 2x" width="800" height="360" alt="">
+                </picture>
+              </div>
+              <div class="playground__header">
+                <button class="round-btn"><img src="img/svg/icon-arrow-back.svg" width="11" height="19" alt="">
+                </button>
+                <div class="playground__stats playground__stars"><img src="img/svg/icon-star.svg" width="48" height="50" alt=""><span class="playground__stars-number">0/9000</span></div>
+                <div class="playground__stats playground__coins"><img src="img/svg/icon-coins.svg" width="39" height="27" alt=""><span class="playground__coins-number">1000000</span></div>
+              </div>
+              <div class="playground__main">
+                <div class="slot">
+                  <div class="slot__inner">
+                    <div class="slot__column"></div>
+                    <div class="slot__column"></div>
+                    <div class="slot__column"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="playground__footer">
+                <div class="bets playground__bets">
+                  <button class="round-btn bets__minus"><img src="img/svg/icon-minus.svg" width="11" height="7" alt="">
+                  </button>
+                  <label class="bets__input-wrapper">
+                    <input class="bets__input" type="text"><span class="bets__value">50000</span>
+                  </label>
+                  <button class="round-btn bets__plus"><img src="img/svg/icon-plus.svg" width="15" height="14" alt="">
+                  </button>
+                </div>
+                <div class="playground__winning"><span class="playground__winning-text"><span>win</span><span>win</span></span><span class="playground__winning-summ">0,000</span></div>
+                <div class="playground__controls">
+                  <button class="btn playground__auto-btn" type="button"><span class="btn__text"><span>auto</span><span>auto</span></span></button>
+                  <button class="btn btn--green playground__spin-btn" type="button"><span class="btn__text"><span>spin</span><span>spin</span></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
