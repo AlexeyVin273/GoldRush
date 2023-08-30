@@ -71,7 +71,7 @@ export class Bets {
     this.isDisabled = true;
   }
 
-  eneble() {
+  enable() {
     this.isDisabled = false;
   }
 
@@ -108,18 +108,32 @@ export class Bets {
     this.deactivateCounter = true;
   }
 
-  onValueKeyDown(evt) {
-    evt.preventDefault();
-    const oldValue = this.value.textContent;
-    if (evt.key >= '0' && evt.key <= '9') {
-      const newValue = oldValue + evt.key;
-      if (newValue <= this.maxValue) {
-        this.set(Number(newValue));
-      }
-    }
+  getKeyCode(str) {
+    return str.charCodeAt(str.length - 1);
+  }
 
-    if (evt.key === 'Backspace') {
-      this.set(Number(oldValue.substr(0, oldValue.length - 1)));
-    }
+  onValueKeyDown(evt) {
+    setTimeout(() => {
+      let key = evt.key;
+      const code = evt.which || evt.ketCode;
+      if (code === 0 || code === 229) { // bugfix for android keyboard
+        const value = this.valueInput.value;
+        key = value.substring(value.length - 1);
+      }
+
+      const oldValue = this.value.textContent;
+      if (key >= '0' && key <= '9') {
+        const newValue = oldValue + key;
+        if (newValue <= this.maxValue) {
+          this.set(Number(newValue));
+        }
+      }
+
+      if (key === 'Backspace') {
+        this.set(Number(oldValue.substr(0, oldValue.length - 1)));
+      }
+
+      this.valueInput.value = '';
+    }, 0);
   }
 }

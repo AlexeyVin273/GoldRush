@@ -53,7 +53,7 @@
     background: linear-gradient(180deg, $color-electric-indigo 0%, $color-electric-purple 40.42%, $color-indigo 100%);
     box-shadow:
       0 4px 4px 0 rgba($color-default-black, 0.25),
-      0 -11px 19px 0 rgba($color-persian-indigo-2, 0.631) inset;
+      0 -11px 19px 0 rgba($color-persian-indigo-2, 0.63) inset;
 
     .round-btn {
       flex-shrink: 0;
@@ -223,7 +223,7 @@
     background: linear-gradient(180deg, $color-electric-indigo 0%, $color-electric-purple 40.42%, $color-indigo 100%);
     box-shadow:
       0 4px 4px 0 rgba($color-default-black, 0.25),
-      0 -11px 19px 0 rgba($color-persian-indigo-2, 0.631) inset;
+      0 -11px 19px 0 rgba($color-persian-indigo-2, 0.63) inset;
 
     @include vp-1024 {
       flex: 0 0 80px;
@@ -240,7 +240,6 @@
       justify-items: center;
       gap: 10px 15px;
       padding: 10px;
-
     }
   }
 
@@ -296,6 +295,8 @@
     text-align: center;
     text-transform: uppercase;
 
+    opacity: 0;
+
     span:nth-child(1) {
       position: relative;
 
@@ -312,16 +313,26 @@
       left: 0;
       top: 0;
       text-shadow:
-        -1px 0px $color-fun-blue,
-        1px 0px $color-fun-blue,
+        -1px 0 $color-fun-blue,
+        1px 0 $color-fun-blue,
         0 -1px $color-fun-blue,
-        0px 1px $color-fun-blue,
+        0 1px $color-fun-blue,
         -1px -1px $color-fun-blue,
         1px 1px $color-fun-blue,
         1px -1px $color-fun-blue,
         -1px 1px $color-fun-blue;
 
       z-index: 1;
+    }
+
+    &.is-shown {
+      opacity: 1;
+
+      animation-name: winWordBlinking;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
     }
 
     @include vp-1024 {
@@ -341,6 +352,12 @@
 
     background-image: linear-gradient(180deg, $color-chartreuse-yellow 0%, $color-selective-yellow 100%);
     background-clip: text;
+
+    opacity: 0;
+
+    &.is-shown {
+      opacity: 1;
+    }
 
     @include vp-1024 {
       font-size: 32px;

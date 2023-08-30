@@ -11,9 +11,9 @@
   border-radius: 11px;
 
   box-shadow:
-    0px 4px 4px 0px rgba($color-harlequin, 0.271),
-    0px 4px 4px 0px rgba($color-lemon-chiffon, 0.651) inset,
-    0px -6px 4px 0px rgba($color-deep-sky-blue-2, 0.26) inset;
+    0 4px 4px 0 rgba($color-harlequin, 0.27),
+    0 4px 4px 0 rgba($color-lemon-chiffon, 0.65) inset,
+    0 -6px 4px 0 rgba($color-deep-sky-blue-2, 0.26) inset;
 
   cursor: pointer;
   user-select: none;
@@ -43,10 +43,10 @@
       left: 0;
       top: 0;
       text-shadow:
-        -1px 0px $color-fun-blue,
-        1px 0px $color-fun-blue,
+        -1px 0 $color-fun-blue,
+        1px 0 $color-fun-blue,
         0 -1px $color-fun-blue,
-        0px 1px $color-fun-blue,
+        0 1px $color-fun-blue,
         -1px -1px $color-fun-blue,
         1px 1px $color-fun-blue,
         1px -1px $color-fun-blue,
@@ -127,10 +127,10 @@
         left: 0;
         top: 0;
         text-shadow:
-          -1px 0px $color-kelly-green,
-          1px 0px $color-kelly-green,
+          -1px 0 $color-kelly-green,
+          1px 0 $color-kelly-green,
           0 -1px $color-kelly-green,
-          0px 1px $color-kelly-green,
+          0 1px $color-kelly-green,
           -1px -1px $color-kelly-green,
           1px 1px $color-kelly-green,
           1px -1px $color-kelly-green,
@@ -167,9 +167,9 @@
     border-width: 2px;
 
     box-shadow:
-      0px 6px 6px 0px rgba($color-harlequin, 0.271),
-      0px 6px 6px 0px rgba($color-lemon-chiffon, 0.651) inset,
-      0px -9px 6px 0px rgba($color-deep-sky-blue-2, 0.26) inset;
+      0 6px 6px 0 rgba($color-harlequin, 0.27),
+      0 6px 6px 0 rgba($color-lemon-chiffon, 0.65) inset,
+      0 -9px 6px 0 rgba($color-deep-sky-blue-2, 0.26) inset;
   }
 
   @include vp-767 {

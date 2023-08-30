@@ -61,6 +61,3 @@ mixin slot()
     .slot__inner
       - for (let i = 0; i < 3; ++i)
           .slot__column
-            each image in images
-              .slot__cell(class=`slot__cell--size-${image.size}`)
-                +picture("content/slot", image.src, "png", image.width, image.height, "")
